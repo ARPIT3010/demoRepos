@@ -11,7 +11,7 @@ pipeline {
                 steps {
 		
                         echo 'Building the maven project'
-            		sh "cd ./demo"
+            		sh "mvn -version"
 			echo 'Moved the demo directory'
                   	sh 'mvn clean install'
 			
