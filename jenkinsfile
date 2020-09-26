@@ -11,7 +11,7 @@ pipeline {
                 steps {
 		
                         echo 'Building the maven project'
-            		git 'cd ./demo'
+            		bat 'git https://github.com/ARPIT3010/demoRepos/tree/master/demo'
 			echo 'Moved the demo directory'
                   	bat 'mvn clean install'
 			
