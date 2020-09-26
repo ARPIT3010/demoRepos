@@ -1,14 +1,19 @@
 pipeline {
     agent any
-    
+    tools {
+        maven 'Maven 3.3.9'
+        jdk 'jdk8'
+    }
+
     stages {
 	
         stage('Build') {
                 steps {
+		
                         echo 'Building the maven project'
-            
+            		sh 'çd ./demo'
 			echo 'Moved the demo directory'
-                  
+                  	sh 'mvn clean install'
 			
                 }
         }
