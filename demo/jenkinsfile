@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+    tools {
+        maven 'Maven 3.6.3'
+        jdk 'jdk8'
+    }
+
+    stages {
+	
+        stage('Build') {
+                steps {
+		
+                        echo 'Building the maven project'
+            		
+			              echo 'Moved the demo directory'
+                  	sh 'mvn clean install'
+			
+                }
+        }
+   }
+}   
