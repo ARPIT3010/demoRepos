@@ -1,0 +1,13 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+                steps {
+                        echo 'Building the maven project'
+                        'cd .\demo'
+                        'mvn clean intall'
+			
+                }
+        }
+   }
+}   
