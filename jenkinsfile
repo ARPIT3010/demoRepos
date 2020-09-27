@@ -12,7 +12,7 @@ pipeline {
                         echo 'Building the project'
                 }
         }
-	 stage('Next')
+	 stage('Next'){
 		steps {
 			input('Do you wish to continue?')
         }
