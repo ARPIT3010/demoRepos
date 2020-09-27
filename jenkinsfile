@@ -9,13 +9,35 @@ pipeline {
 	
         stage('Build') {
                 steps {
-		
-                        echo 'Building the maven project'
-            		
-			echo 'Moved the demo directory'
-                  	
-			
+                        echo 'Building the project'
                 }
         }
+	 stage('Next')
+		steps {
+			input('Do you wish to continue?')
+        }
+	}
+	
+	stage('Three') {
+                when {
+                        not {
+                             branch "master"
+                        }
+                }
+                steps {
+			echo "Hello"
+                      }
+        }
+	
+	stage('Four'){
+		steps{
+		echo 'Running the tests'
+		}
+	}
+	
+	stage('Five'){
+	steps{
+	echo 'Ends the pipeline'}
+}
    }
 }   
